@@ -13,8 +13,12 @@ posts = Post.all
 		post: posts.sample,
 		body: RandomData.random_paragraph
 	)
-	end
+end
 
-	puts "Seed finished"
-	puts "#{Post.count} posts created"
-	puts "#{Comment.count} comments created"
+Post.find_or_create_by(title: "Unique Post") do |post|
+	post.body = "This is the body for the unique post"
+end
+
+puts "Seed finished"
+puts "#{Post.count} posts created"
+puts "#{Comment.count} comments created"
