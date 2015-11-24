@@ -10,7 +10,7 @@ RSpec.describe Post, type: :model do
   	end
 
   	it "should respond to body" do
-  		expect(post).to respond_to(:title)
+  		expect(post).to respond_to(:body)
   	end
   end
 end
