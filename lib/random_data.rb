@@ -22,4 +22,9 @@ module RandomData
 		letters.shuffle!
 		letters[0,rand(3..8)].join
 	end
+
+	def random_boolean
+		random_boolean = [true, false].sample
+		random_boolean
+	end
 end

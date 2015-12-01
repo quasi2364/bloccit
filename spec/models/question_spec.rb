@@ -1,15 +1,20 @@
 require 'rails_helper'
+include RandomData
 
 RSpec.describe Question, type: :model do
-  let(:question) { Question.create(title: "New Question Title", body: "New Question Body") }
+  let (:my_question) { Question.create!(title: RandomData.random_sentence, body: RandomData.random_paragraph, resolved: RandomData.random_boolean) }
 
   describe "attributes" do
   	it "should respond to title" do
-  		expect(question).to respond_to(:title)
+  		expect(my_question).to respond_to(:title)
   	end
 
   	it "should respond to body" do
-  		expect(question).to respond_to(:body)
+  		expect(my_question).to respond_to(:body)
+  	end
+
+  	it "should respond to resolved" do
+  		expect(my_question).to respond_to(:resolved)
   	end
   end
 end
