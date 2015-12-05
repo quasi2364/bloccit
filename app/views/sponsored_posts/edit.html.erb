@@ -1,2 +1,10 @@
-<h1>SponsoredPosts#edit</h1>
-<p>Find me in app/views/sponsored_posts/edit.html.erb</p>
+<h1>Edit Sponsored Post</h1>
+<%= form_for [@sponsored_post.topic, @sponsored_post] do |f| %>
+	<%= f.label :title %>
+	<%= f.text_field :title %>
+	<%= f.label :body %>
+	<%= f.text_field :body %>
+	<%= f.label :price %>
+	<%= f.number_field :price %>
+	<%= f.submit "Save", class: 'btn btn-success' %>
+<% end %>
