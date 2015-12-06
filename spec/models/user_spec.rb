@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   
-  let(:user) { User.create!(name: "Bloccit User", email: "user@bloccit.com", password: "password")}
+  let(:user) { User.create!(name: "bloccit user", email: "user@bloccit.com", password: "password")}
 
   #Shoulda tests for name
   it { should validate_presence_of(:name)}
@@ -50,5 +50,11 @@ RSpec.describe User, type: :model do
   	it "should be an invalid user due to incorrectly formatted email address" do
   		expect(user_with_invalid_email_format).to_not be_valid
   	end
+  end
+
+  describe "name formatting" do
+    it "should capitalize the first letter of each word in name" do
+      expect(user.name).to eq "Bloccit User"
+    end
   end
 end
