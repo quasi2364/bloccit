@@ -2,7 +2,14 @@
 <div class='jumbotron'>
 	<h1>Bloccit</h1>
 	<p>Bloccit is a resource for sharing links with your friends!</p>
-	<p><%= link_to "Sign Up", new_user_path, class: 'btn btn-primary'%> today!</p>
+		<div class='row'>
+			<div class='col-md-2'>
+				<p><%= link_to "Sign Up", new_user_path, class: 'btn btn-primary'%> or </p>
+			</div>
+			 <div class='col-md-2'>
+			 		<%= link_to "Sign In", new_session_path, class: 'btn btn-default' %>
+			 </div>
+		</div>
 </div>
 
 <div class='row'>
