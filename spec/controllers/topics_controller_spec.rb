@@ -45,6 +45,7 @@ RSpec.describe TopicsController, type: :controller do
 		end
 
 		it "initializes @topic" do
+			get :new
 			expect(assigns(:topic)).not_to be_nil
 		end
 	end
