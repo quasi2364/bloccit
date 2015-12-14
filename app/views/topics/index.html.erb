@@ -1,9 +1,15 @@
-<h1>Topics</h1>
-<% if user_is_authorized_for_topics? %>
-	<div class='col-md-4'>
-	<%= link_to "New Topic", new_topic_path, class: 'btn btn-success' %>
+<div class="row">
+	<div class='col-md-7'>
+		<h1>Topics</h1>
 	</div>
-<% end %>
+	
+	<div class="top_buttons">
+		<% if user_is_authorized_for_topics? %>
+			<%= link_to "New Topic", new_topic_path, class: 'btn btn-success' %>
+		<% end %>
+	</div>
+</div>
+
 
 <div class="row">
 	<div class='col-md-8'>
