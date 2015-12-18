@@ -2,6 +2,8 @@
 		<div class='col-md-5'>
 			<h2><%= @topic.name %></h2>
 		</div>
+
+		<%= render partial: 'ratings/button', locals: {rating: @topic.rating} %>
 			
 		<div class='top_buttons'>
 			<% if current_user %>

@@ -12,8 +12,12 @@
 				<%= f.text_area :description, rows: 5, class: 'form-control', placeholder: "Enter description name" %>
 			</div>
 
-			<div class='form_group'>
+			<div class='form-group'>
 				<%= render partial: 'labels/form', locals: {f: f, labels: @topic.labels} %>
+			</div>
+
+			<div class='form-group'>
+				<%= render partial: 'ratings/form', locals: {f: f, rating: @rating} %>
 			</div>
 
 			<div class='form-group'>
