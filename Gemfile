@@ -30,4 +30,5 @@ gem 'rails', '4.2.4'
 gem 'turbolinks'
 gem 'bootstrap-sass'
 gem 'bcrypt'
+gem 'figaro', '1.0'
 
