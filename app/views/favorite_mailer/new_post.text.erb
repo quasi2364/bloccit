@@ -1,0 +1,7 @@
+Hello <%= @user.name %>,
+
+You've created and favorited a new post "<%= @post.title %>"
+
+You will now recieve notifications when someone comments on your post.
+
+<%= link_to "View post on site", topic_post_url(@post.topic, @post) %>

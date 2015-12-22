@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+	</head>
+	<body>
+		<h1>New post created "<%=@post.title %>"</h1>
+		<p>Hello <%= @user.name %>,</p>
+		<p>You've favorited the above post and will now recieve updates when it is commented on.</p>
+		<p>
+			<%= link_to "View Post on site", topic_post_url(@post.topic, @post) %>
+		</p>
+	</body>
+</html>
