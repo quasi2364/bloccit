@@ -1,0 +1,9 @@
+<% current_user.favorites.each do |favorite| %>
+	<div>
+		<%= image_tag favorite.post.user.avatar_url(30) %>
+		<%= link_to favorite.post.title, topic_post_path(favorite.post.topic, favorite.post) %> |
+		<%= pluralize(favorite.post.comments.count, "Comment") %> |
+		<%= pluralize(favorite.post.points, "Vote") %> 
+		<br/>
+	</div>	
+<% end %>

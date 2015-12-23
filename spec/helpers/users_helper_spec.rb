@@ -1,15 +1,27 @@
 require 'rails_helper'
+include SessionsHelper
 
-# Specs in this file have access to a helper object that includes
-# the UsersHelper. For example:
-#
-# describe UsersHelper do
-#   describe "string concat" do
-#     it "concats two strings with spaces" do
-#       expect(helper.concat_strings("this","that")).to eq("this that")
-#     end
-#   end
-# end
 RSpec.describe UsersHelper, type: :helper do
-  pending "add some examples to (or delete) #{__FILE__}"
+  let(:user) {create(:user)}
+  let(:post) {create(:post, user: user)}
+  let(:comment) {create(:comment, user: user, post: post)}
+  let(:favorite) {create(:favorite, user: user)}
+
+  describe "user has object?" do
+  	before do
+  		create_session(user)
+  	end
+
+  	it "returns true if current user has any posts" do
+  		expect(user_has_posts?(current_user)).to be true
+  	end
+
+  	it "returns true if current user has any comments" do
+  		expect(user_has_comments?(current_user)).to be true
+  	end
+
+  	it "returns true if current user has any favorites" do
+  		expect(user_has_favorites?(current_user)).to be true
+  	end
+  end
 end
