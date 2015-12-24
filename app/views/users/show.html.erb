@@ -19,21 +19,21 @@
 	</div>
 </div>
 
-<% if user_has_posts?(current_user) %>
+<% if user_has_object?(current_user, :posts) %>
 	<h2>Posts</h2>
 	<%= render @user.posts %>
 <% else %>
 	<h2><%= @user.name %> has not submitted any posts.</h2>
 <% end %>
 
-<% if user_has_comments?(current_user) %>
+<% if user_has_object?(current_user, :comments) %>
 	<h2>Comments</h2>
 	<%= render @user.comments %>
 <% else %>
 	<h2><%= @user.name %> has not submitted any comments.</h2>
 <% end %>
 
-<% if user_has_favorites?(current_user) %>
+<% if user_has_object?(current_user, :favorites) %>
 	<h2>Favorites</h2>
 	<%= render 'favorites/userfavs' %>
 <% else %>
